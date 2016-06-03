@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Clementine.js FCC Boilerplate
 
 [![Join the chat at https://gitter.im/johnstonbl01/clementinejs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnstonbl01/clementinejs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -102,3 +103,6 @@ You can find a complete step-by-step tutorial on how to create this app from the
 ## License
 
 MIT License. [Click here for more information.](LICENSE.md)
+=======
+# Timestamp-Microservice
+>>>>>>> 93b2939ecca72109841affbb9053db0f01d0cf0a
