@@ -7,3 +7,22 @@
 
 
 var express = require('express');
+
+var app = express();
+
+app.set('port', process.env.PORT || 3000);
+
+app.get('/', function(req, res){
+    res.send('my default page goes here with the instructions and relevant info');
+})
+
+
+app.get('/:date', function(req, res){
+    
+    res.end('I have received ' + req.params.date);
+});
+
+
+app.listen(app.get('port'), function() {
+    console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+});
