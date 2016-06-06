@@ -13,8 +13,6 @@ var app = express();
 
 app.set('view engine', 'jade');
 
-app.set('port', process.env.PORT || 8080);
-
 app.get('/', function(req, res){
     res.render('main');
 });
@@ -70,6 +68,6 @@ app.get('/:date', function(req, res){
 });
 
 
-app.listen(app.get('port'), function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
