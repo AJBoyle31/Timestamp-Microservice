@@ -19,7 +19,8 @@
     "boilerplate"
   ],
   "scripts": {
-  "start": "node server.js"
+  "start": "node server.js
+  "run": "node timestamp.js"
   },
   "author": "Blake Johnston",
   "license": "MIT",
