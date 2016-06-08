@@ -20,7 +20,7 @@
   ],
   "scripts": {
   
-  "run": "node timestamp.js"
+  "start": "node timestamp.js"
   },
   "author": "Blake Johnston",
   "license": "MIT",
