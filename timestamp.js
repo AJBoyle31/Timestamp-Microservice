@@ -11,12 +11,12 @@ var express = require('express');
 
 var app = express();
 
-//app.set('view engine', 'jade');
+//app.set('view engine', 'html');
 
 //app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-    res.render('main');
+    res.sendFile(process.cwd()+'/views/home.html');
 });
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
