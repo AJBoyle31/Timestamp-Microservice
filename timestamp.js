@@ -20,7 +20,7 @@ app.get('/', function(req, res){
 });
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var year, monthNumber, month, day, unix;        
+var year, monthNumber, month, day, unix, fullDate;        
 
 app.get('/:date', function(req, res){
     
@@ -32,18 +32,21 @@ app.get('/:date', function(req, res){
         month = monthNames[monthNumber];
         day = enteredDate.getDate();
         unix = enteredDate.getTime();
+        fullDate = month + ' ' + day + ', ' + year; 
         
-        return '{"unix":' + unix.toString().slice(0,-3) + ',"natural":' + '"' + month + ' ' + day + ', ' + year + '"}';
+        return { unix: Number(unix.toString().slice(0,-3)), natural: fullDate };
     }
-    
+     
     function isUnix(enteredDate) {
         year = enteredDate.getFullYear();
         monthNumber = enteredDate.getMonth();
         month = monthNames[monthNumber];
         day = enteredDate.getDate();
         unix = enteredDate.getTime();
+        fullDate = month + ' ' + day + ', ' + year; 
         
-        return '{"unix":' + unix.toString().slice(0,-3) + ',"natural":' + '"' + month + ' ' + day + ', ' + year + '"}';
+        
+        return { unix: Number(unix.toString().slice(0,-3)), natural: fullDate };
     }
     
     
@@ -55,11 +58,11 @@ app.get('/:date', function(req, res){
             res.end('{"unix":null,"natural":null}');
         }
         else {
-            res.end(isUnix(enteredDateNumber));
+            res.end(JSON.stringify(isUnix(enteredDateNumber)));
         }
     }
     else {
-        res.end(isNatural(enteredDateString));
+        res.end(JSON.stringify(isNatural(enteredDateString)));
     }
 
 });
